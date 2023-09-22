@@ -1,0 +1,111 @@
+.a {
+    width: 1200px;
+    height: 800px;
+    margin: auto;
+  }
+  .map {
+    width: 800px;
+    height: 600px;
+    float: left;
+  }
+  .amap-copyright {
+    color: grey;
+  }
+  .c {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  #noe {
+    border-bottom: 1px solid black;
+  }
+  .c p {
+    width: 18%;
+    height: 60px;
+    float: left;
+    border-right: 1px #ddd solid;
+    margin-left: 10px;
+  }
+  .c p:last-child {
+    border: none;
+  }
+  .c p .b .a {
+    width: 20px;
+    height: 20px;
+    background-color: #96dbff;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: white;
+    line-height: 20px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .c p .b {
+    width: 100%;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    text-align: left;
+  }
+  .c p .c {
+    width: 100%;
+    height: 20px;
+    float: left;
+    text-indent: 1em;
+    text-align: left;
+  }
+  .b {
+    width: 800px;
+    height: 400px;
+  }
+  .e {
+    width: 173px;
+    height: 26px;
+    border: 0.2px solid black;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+  .e p {
+    width: 100%;
+    height: 26px;
+    margin: 0;
+    float: left;
+  }
+  .e p .c {
+    width: 40px;
+    height: 26px;
+    text-indent: 0;
+    float: left;
+  }
+  .e .a {
+    width: 90px;
+    height: 26px;
+    font-size: 15px;
+    display: inline-block;
+    
+  }
+  .e .a{
+    float: left;
+  }
+  .e .b {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    margin-left: 15px;
+    text-align: center;
+    border-left: 0.2px solid black;
+  }
+  .an {
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin-top: 85px;
+  }
+  .an table {
+    width: 100%;
+  }
+  tbody tr td {
+    text-align: center;
+  }

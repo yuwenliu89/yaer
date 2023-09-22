@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="./2.css" />
+<body>
+  <div id="box"></div>
+  <div id="an"></div>
+
+  <script type="text/javascript">
+    window._AMapSecurityConfig = {
+      securityJsCode: "68c18d76a7c74324ca31798d9a75ee60",
+    };
+  </script>
+
+  <script src="https://webapi.amap.com/maps?v=2.0&key=c969beafa3fa029277cb41c303924dea&plugin=AMap.Driving"></script>
+  <script type="text/javascript">
+    var map = new AMap.Map("box", {
+      resizeEnable: true, // 默认使用 2D 模式
+      zoom: 16,
+    });
+    var driving = new AMap.Driving({
+      map: map,
+      panel: "an",
+    });
+    driving.search(
+      // new AMap.LngLat(113.427532, 34.765086),
+      new AMap.LngLat(113.428198, 34.774311),
+      new AMap.LngLat(91.118473, 29.654494),
+      function (status, result) {
+        if (status === "box") {
+          log.success("绘制驾车路线完成");
+        } else {
+          log.error("获取驾车数据失败：" + result);
+        }
+      }
+    );
+  </script>
+</body>

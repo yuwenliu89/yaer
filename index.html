@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./echarts copy.js"></script>
+    <script src="swiper/3.swiper.com.cn_dist_js_swiper.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="swiper/swiper.com.cn_demo_certify_css_swiper.min.css"
+    />
+    <style>
+      .a {
+        width: 900px;
+        height: 660px;
+        margin: auto;
+      }
+      #five {
+        width: 100%;
+        height: 400px;
+        margin-top: 40px;
+      }
+      .c {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 10px;
+      }
+      #noe {
+        border-bottom: 1px solid black;
+      }
+      .c p {
+        width: 18%;
+        height: 60px;
+        float: left;
+        border-right: 1px #ddd solid;
+        margin-left: 10px;
+      }
+      .c p:last-child {
+        border: none;
+      }
+      .c p .b .a {
+        width: 20px;
+        height: 20px;
+        background-color: #96dbff;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 13px;
+        color: white;
+        line-height: 20px;
+        margin-top: 10px;
+        display: inline-block;
+      }
+      .c p .b {
+        width: 100%;
+        height: 40px;
+        float: left;
+        line-height: 40px;
+        text-align: left;
+      }
+      .c p .c {
+        width: 100%;
+        height: 20px;
+        float: left;
+        text-indent: 1em;
+        text-align: left;
+      }
+      .b {
+        width: 800px;
+        height: 400px;
+      }
+      .e {
+        width: 173px;
+        height: 26px;
+        border: 0.2px solid black;
+        float: left;
+        line-height: 26px;
+        margin-bottom: 20px;
+      }
+      .e p {
+        width: 100%;
+        height: 26px;
+        margin: 0;
+        float: left;
+      }
+      .e p .c {
+        width: 40px;
+        height: 26px;
+        text-indent: 0;
+        float: left;
+      }
+      .e .a {
+        width: 90px;
+        height: 26px;
+        font-size: 15px;
+        display: inline-block;
+      }
+      .e .a {
+        float: left;
+      }
+      .e .b {
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        display: inline-block;
+        margin-left: 15px;
+        text-align: center;
+        border-left: 0.2px solid black;
+      }
+      .f {
+        width: 260px;
+        height: 100px;
+        margin: auto;
+      }
+      .f .aa {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        margin: 0;
+        position: relative;
+      }
+      .f .aa .ya {
+        width: 10px;
+        height: 10px;
+        float: left;
+        border-radius: 10px;
+        background-color: #96dbff;
+        margin-top: 20px;
+        position: absolute;
+        left: 77px;
+      }
+      .f .bb {
+        width: 100%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        margin: 0;
+        position: relative;
+      }
+      #an {
+        width: 1200px;
+        height: 400px;
+        margin: auto;
+        display: block;
+      }
+      #ta {
+        width: 1200px;
+        height: 800px;
+        margin: auto;
+        display: block;
+      }
+      #ts {
+        width: 1500px;
+        height: 890px;
+        margin: auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="a">
+        <div class="c" id="noe">
+          <p>
+            <span class="b">浏览量(PV)<span class="a">?</span></span>
+
+            <span class="c">50</span>
+          </p>
+          <p>
+            <span class="b">访客数(UP)<span class="a">?</span> </span>
+
+            <span class="c">27</span>
+          </p>
+          <p>
+            <span class="b">IP数<span class="a">?</span></span>
+
+            <span class="c">7</span>
+          </p>
+          <p>
+            <span class="b">跳出率<span class="a">?</span> </span>
+            <span class="c">87.5%</span>
+          </p>
+          <p>
+            <span class="b">平均访问时长<span class="a">?</span></span>
+
+            <span class="c">00:04:08</span>
+          </p>
+        </div>
+        <div class="e">
+          <p>
+            <span class="c">指标:</span>
+            <span class="a">&emsp;浏览量(PV)</span><span class="b">&or;</span>
+          </p>
+        </div>
+        <div id="five"></div>
+        <div class="f">
+          <p class="aa">
+            <span class="ya"></span>
+            <span>浏览量(PV)</span>
+          </p>
+          <p class="bb">
+            <span>对比:</span>
+            <span><input type="checkbox" name="" id="" />前一日</span>
+            <span><input type="checkbox" name="" id="" />上周间期</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <iframe src="./1.html" frameborder="0" id="an"></iframe>
+    <iframe src="./2.html" frameborder="0" id="ta"></iframe>
+    <iframe src="./3.html" frameborder="0" id="ts"></iframe>
+    <script>
+      var five = echarts.init(document.getElementById("five"));
+      const data = [
+        0, 0, 0, 0, 0, 17, 0, 9, 4, 5, 1, 0.5, 0, 10, 2, 0, 0, 0, 0, 0, 0, 0, 0,
+      ];
+      var j = 0;
+      var max = Math.max.apply(Math, data);
+      option = {
+        title: {
+          text: "",
+        },
+        xAxis: {
+          data: [
+            "0",
+            "",
+            "",
+            "3",
+            "",
+            "",
+            "6",
+            "",
+            "",
+            "9",
+            "",
+            "",
+            "12",
+            "",
+            "",
+            "15",
+            "",
+            "",
+            "18",
+            "",
+            "",
+            "21",
+          ],
+        },
+        visualMap: {
+          show: false,
+          dimension: 1,
+          pieces: [],
+          outOfRange: {
+            color: "green",
+          },
+        },
+        yAxis: {},
+        series: [
+          {
+            type: "line",
+            data,
+          },
+        ],
+      };
+
+      option.series[0].data = data;
+      option.visualMap.pieces[0] = { gte: 300, lte: max, color: "red" };
+      five.setOption(option);
+    </script>
+    <script></script>
+  </body>
+</html>

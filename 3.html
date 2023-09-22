@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="./3.css" />
+<body>
+  <div class="a">
+    <div class="c" id="noe">
+      <p>
+        <span class="b">浏览量(PV)<span class="a">?</span></span>
+
+        <span class="c">50</span>
+      </p>
+      <p>
+        <span class="b">访客数(UP)<span class="a">?</span> </span>
+
+        <span class="c">27</span>
+      </p>
+      <p>
+        <span class="b">IP数<span class="a">?</span></span>
+
+        <span class="c">7</span>
+      </p>
+      <p>
+        <span class="b">跳出率<span class="a">?</span> </span>
+        <span class="c">87.5%</span>
+      </p>
+      <p>
+        <span class="b">平均访问时长<span class="a">?</span></span>
+
+        <span class="c">00:04:08</span>
+      </p>
+    </div>
+    <div class="e">
+      <p>
+        <span class="c">指标:</span>
+        <span class="a">&emsp;浏览量(PV)</span><span class="b">&or;</span>
+      </p>
+    </div>
+    <div id="container" class="map" tabindex="0"></div>
+    <div class="an">
+      <table border="1" cellspacing="0">
+        <thead>
+          <tr>
+            <th></th>
+            <th>省份</th>
+            <th>浏览量(PV)</th>
+            <th>占比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>河南</td>
+            <td>45</td>
+            <td>85%</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>黑龙江</td>
+            <td>60</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>北京</td>
+            <td>40</td>
+            <td>85%</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>上海</td>
+            <td>30</td>
+            <td>70%</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>新疆</td>
+            <td>30</td>
+            <td>80%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    window._AMapSecurityConfig = {
+      securityJsCode: "68c18d76a7c74324ca31798d9a75ee60",
+    };
+  </script>
+  <script
+    language="javascript"
+    src="https://webapi.amap.com/maps?v=2.0&key=c969beafa3fa029277cb41c303924dea&plugin=AMap.Scale,AMap.ToolBar"
+  ></script>
+  <script>
+    var SOC = "CHN";
+    var colors = {};
+    var GDPSpeed = {
+      410000: 19, //河南
+      650000: 7.0, //新疆
+      310000: 6.5, //上海
+      110000: 6.5, // 北京
+      230000: 20, // 黑龙江
+    };
+    let tbody = document.querySelector("tbody");
+    var arr = [];
+    var getColorByDGP = function (adcode) {
+      if (!colors[adcode]) {
+        var gdp = GDPSpeed[adcode];
+        if (!gdp) {
+          colors[adcode] = "rgb(227,227,227)";
+        } else {
+          var rg = 255 - Math.floor(((gdp - 5) / 5) * 255);
+          colors[adcode] = "rgb(" + rg + "," + rg + ",255)";
+        }
+      }
+      return colors[adcode];
+    };
+
+    var disCountry = new AMap.DistrictLayer.Country({
+      zIndex: 10,
+      SOC: "CHN",
+      depth: 2,
+      styles: {
+        "nation-stroke": "#f09",
+        "coastline-stroke": [0.85, 0.63, 0.94, 1],
+        "province-stroke": "white",
+        "city-stroke": "rgba(255,255,255,0.15)", //中国特有字段
+        fill: function (props) {
+          //中国特有字段
+          return getColorByDGP(props.adcode_pro);
+        },
+      },
+    });
+
+    var map = new AMap.Map("container", {
+      zooms: [4, 8],
+      center: [104.188488, 34.302032],
+      showIndoorMap: false,
+      zoom: 3,
+      isHotspot: false,
+      defaultCursor: "pointer",
+      touchZoomCenter: 1,
+      pitch: 0,
+      layers: [disCountry, new AMap.TileLayer.Satellite()],
+      viewMode: "3D",
+    });
+    map.addControl(new AMap.Scale());
+    map.addControl(new AMap.ToolBar({ liteStyle: true }));
+    document.getElementsByClassName("amap-mcode")[0].innerHTML =
+      "-GS(2022)200号、GS(2021)648号";
+  </script>
+</body>

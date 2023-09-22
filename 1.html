@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="./swiper-bundle.min.css" />
+<link rel="stylesheet" href="./1.css" />
+<!-- Demo styles -->
+<body>
+  <!-- Swiper -->
+  <div id="box">
+    <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper2"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./img/11.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/55.png" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/44.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/33.jpg" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/22.jpg" />
+        </div>
+      </div>
+    </div>
+    <div id="ya">
+      <div thumbsSlider="" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide an">
+            <img src="./img/2.png" />
+          </div>
+          <div class="swiper-slide an">
+            <img src="./img/1.png" />
+          </div>
+          <div class="swiper-slide an">
+            <img src="./img/5.jpg" />
+          </div>
+          <div class="swiper-slide an">
+            <img src="./img/4.jpg" />
+          </div>
+          <div class="swiper-slide an">
+            <img src="./img/3.jpg" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="./swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 15,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+  </script>
+</body>
